@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "83415a81-e83e-43e2-930b-f6ae94e84965",
+		"name": "API Teste de Empréstimos Bancários",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25855523"
+	},
+	"item": [
+		{
+			"name": " https://8dac9f4e-fcb2-4e8f-857a-e4ed3497a0d8.mock.pstmn.io/auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"  const jsonData = pm.response.json();\r",
+							"  pm.test(\"not empty\", () => {\r",
+							"  pm.expect(jsonData).to.be.not.empty;\r",
+							"  pm.expect(jsonData.token).to.be.a('string');\r",
+							" })\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://8dac9f4e-fcb2-4e8f-857a-e4ed3497a0d8.mock.pstmn.io/auth",
+					"protocol": "https",
+					"host": [
+						"8dac9f4e-fcb2-4e8f-857a-e4ed3497a0d8",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " https://8dac9f4e-fcb2-4e8f-857a-e4ed3497a0d8.mock.pstmn.io/auth Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"  const jsonData = pm.response.json();\r",
+							"  pm.test(\"not empty and have value\", () => {\r",
+							"  pm.expect(jsonData).to.be.not.empty; \r",
+							"\r",
+							"  jsonData.forEach(data => {\r",
+							"    pm.expect(data.id).to.be.a('number');\r",
+							"    pm.expect(data.banco).to.be.a('string');\r",
+							"    pm.expect(data.estadoAtuacao).to.be.a('string');\r",
+							"    pm.expect(data.juros).to.be.a('string');\r",
+							"  });\r",
+							" })\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJkZXNhZmlvIjoic2VyYXNhIn0.oOMv4kf9hKMtuatZEZJyESVu9Z7h6hGBwrZRJ-9HkCU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://8dac9f4e-fcb2-4e8f-857a-e4ed3497a0d8.mock.pstmn.io/bank",
+					"protocol": "https",
+					"host": [
+						"8dac9f4e-fcb2-4e8f-857a-e4ed3497a0d8",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"bank"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " https://8dac9f4e-fcb2-4e8f-857a-e4ed3497a0d8.mock.pstmn.io/auth Copy 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"  const jsonData = pm.response.json();\r",
+							"  pm.test(\"not empty and have value\", () => {\r",
+							"  pm.expect(jsonData).to.be.not.empty; \r",
+							"\r",
+							"  jsonData.forEach(data => {\r",
+							"    pm.expect(data.estadoAtuacao).to.be.a('string', 'SC');\r",
+							"  });\r",
+							" })\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJkZXNhZmlvIjoic2VyYXNhIn0.oOMv4kf9hKMtuatZEZJyESVu9Z7h6hGBwrZRJ-9HkCU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://8dac9f4e-fcb2-4e8f-857a-e4ed3497a0d8.mock.pstmn.io/bank?estadoAtuacao=SC",
+					"protocol": "https",
+					"host": [
+						"8dac9f4e-fcb2-4e8f-857a-e4ed3497a0d8",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"bank"
+					],
+					"query": [
+						{
+							"key": "estadoAtuacao",
+							"value": "SC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " https://8dac9f4e-fcb2-4e8f-857a-e4ed3497a0d8.mock.pstmn.io/auth Copy 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"  const jsonData = pm.response.json();\r",
+							"  pm.test(\"not empty and have success message\", () => {\r",
+							"  pm.expect(jsonData).to.be.not.empty; \r",
+							"\r",
+							"  pm.expect(jsonData[0].mensagem).to.be.a('string'); \r",
+							"  pm.expect(jsonData[0].mensagem).to.be.equal('Registro alterado com sucesso!'); \r",
+							"\r",
+							"\r",
+							" })\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJkZXNhZmlvIjoic2VyYXNhIn0.oOMv4kf9hKMtuatZEZJyESVu9Z7h6hGBwrZRJ-9HkCU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"estadoAtuacao\": \"SP\",\r\n        \"juros\": \"15,00%\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://8dac9f4e-fcb2-4e8f-857a-e4ed3497a0d8.mock.pstmn.io/bank?id=1",
+					"protocol": "https",
+					"host": [
+						"8dac9f4e-fcb2-4e8f-857a-e4ed3497a0d8",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"bank"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " https://8dac9f4e-fcb2-4e8f-857a-e4ed3497a0d8.mock.pstmn.io/auth Copy 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"  const jsonData = pm.response.json();\r",
+							"  pm.test(\"not empty and have success message\", () => {\r",
+							"  pm.expect(jsonData).to.be.not.empty; \r",
+							"\r",
+							"  pm.expect(jsonData[1].mensagem).to.be.a('string'); \r",
+							"  pm.expect(jsonData[1].mensagem).to.be.equal('Banco adicionado com sucesso!'); \r",
+							" \r",
+							" })\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJkZXNhZmlvIjoic2VyYXNhIn0.oOMv4kf9hKMtuatZEZJyESVu9Z7h6hGBwrZRJ-9HkCU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"banco\":\"Banco Teste\",\r\n        \"estadoAtuacao\": \"SC\",\r\n        \"juros\": \"10,00%\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://8dac9f4e-fcb2-4e8f-857a-e4ed3497a0d8.mock.pstmn.io/bank",
+					"protocol": "https",
+					"host": [
+						"8dac9f4e-fcb2-4e8f-857a-e4ed3497a0d8",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"bank"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
