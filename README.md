@@ -187,7 +187,7 @@ O mesmo acontece caso o value da key estadoAtuacao esteja vazio ou com outra inf
 #### Criticidade; Nível Alto
 Ao realizar a alteração na infomação da API sem o Bearer Token, a mesma mensagem de confirmação é mostrada.
 #### Criticidade; Nível Médio
-O mesmo acontece caso o value da key id esteja vazio ou com outra infomação diferente de 1
+O mesmo acontece caso o value da key id esteja vazio ou com outra infomação diferente de 1. Além disso, se um `GET /bank` for realizado a informação não será atualizada no `JSON`.
 ## Inserção de dado
 #### Adição de um novo banco
 ```http
@@ -220,7 +220,7 @@ O mesmo acontece caso o value da key id esteja vazio ou com outra infomação di
 #### Criticidade; Nível Alto
 Ao realizar a adição na infomação da API sem o Bearer Token, a mesma mensagem de confirmação é mostrada.
 #### Criticidade; Nível Médio
-O mesmo acontece caso seja inserido key e value, e com informações nulas ou divergentes no body.
+O mesmo acontece caso seja inserido key e value, e com informações nulas ou divergentes no body. Além disso, se um `GET /bank` com os query parameters `KEY` id e o `VALUE` correnpondente for realizado a informação não será mostrada no `JSON`
 ## Cenário de testes
 
 |   Cenário   |  Tipo      | Descrição                           |
